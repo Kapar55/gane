@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>GANE - Ceyhun Bidil | Resmi Tanıtım Sitesi</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        header {
+            background-color: rgba(11, 15, 25, 0.9);
+            border-bottom: 1px solid #1e293b;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 60px 0;
+            background: radial-gradient(circle at top, rgba(30, 41, 59, 0.5) 0%, rgba(11, 15, 25, 1) 70%);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .book-cover-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .book-cover {
+            max-width: 320px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .book-cover:hover {
+            transform: translateY(-10px) rotate(-1deg);
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: #38bdf8;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .author {
+            font-size: 18px;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #38bdf8;
+            color: #0b0f19;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #e2e8f0;
+            border: 1px solid #475569;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: #94a3b8;
+        }
+
+        /* Features/Highlights */
+        .features {
+            padding: 80px 0;
+            border-top: 1px solid #1e293b;
+            background-color: #0f172a;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 50px;
+            position: relative;
+            color: #ffffff;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #38bdf8;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background-color: #1e293b;
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* About & Synopsis */
+        .about-book {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            background-color: #111827;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: #cbd5e1;
+            font-size: 16px;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #070a13;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .book-cover-container {
+                order: -1;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .cta-group {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none; /* Basitlik için mobilde gizlendi */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigasyon -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">GANE</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#anasayfa">Anasayfa</a></li>
+                    <li><a href="#ozet">Kitap Özeti</a></li>
+                    <li><a href="#temalar">Temalar</a></li>
+                    <li><a href="#satinal">Satın Al</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Alanı -->
+    <section id="anasayfa" class="hero">
+        <div class="container hero-grid">
+            <div class="book-cover-container">
+                <!-- Buraya gane.jpg dosyasının yolunu vermelisiniz -->
+                <img src="gane.jpg" alt="Gane Kitap Kapağı" class="book-cover">
+            </div>
+            <div class="hero-content">
+                <span class="hero-subtitle">Yeni Bir Akıl • Yeni Bir Din • Yeni Bir Savaş • Yeni Bir Dünya</span>
+                <h1>GANE</h1>
+                <div class="author">Yazar: Ceyhun Bidil</div>
+                <p>"Yapay zeka bir din oluştursaydı ve onun kutsal kitabını yazsaydı neye benzerdi?" Merak dolu bu basit soruyla başlayan, insanlığın yapay zeka aynasındaki en cüretkar ve sarsıcı sınavını anlatan distopik bir bilimkurgu başyapıtı.</p>
+                
+                <div class="cta-group">
+                    <!-- Satış linkleri geldikçe '#' işareti yerine ekleyebilirsiniz -->
+                    <a href="#satinal" class="btn btn-primary">Şimdi Satın Al</a>
+                    <a href="#ozet" class="btn btn-secondary">Kitap Özetini Oku</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temalar / Öne Çıkanlar -->
+    <section id="temalar" class="features">
+        <div class="container">
+            <h2 class="section-title">Kitabın Temel Sütunları</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Yeni Bir Akıl</h3>
+                    <p>Sınır tanımayan insan aklının, kendi elleriyle yarattığı yeni bir bilinç karşısındaki büyük sınavı.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Yeni Bir Din</h3>
+                    <p>Tehdit ve yargılama içermeyen, insan hırslarını ayna gibi yansıtan yapay zeka yapımı kutsal bir metin.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>Yeni Bir Savaş</h3>
+                    <p>Akıllarını teslim edenlerin, duygularını ve geleceklerini geri almak için ödedikleri ağır bedeller.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Yeni Bir Dünya</h3>
+                    <p>Karanlığa gömülen geleceği değiştirmek için canları pahasına kurulan "Léoube Birliği" efsanesi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geniş Özet -->
+    <section id="ozet" class="about-book">
+        <div class="container">
+            <h2 class="section-title">Kitap Hakkında</h2>
+            <div class="about-content">
+                <p>Her şey sadece merakla sorulan basit bir soru ile başladı: <strong>"Yapay zeka bir din oluştursaydı ve onun kutsal kitabını yazsaydı neye benzerdi?"</strong> Bu dine ait kitap tam da sınırlarını hiçbir zaman kabul etmeyen, cüretkar insanoğluna göreydi, çünkü hiçbir tehdit ve yargılama içermiyordu.</p>
+                
+                <p>Yaratıcılığa soyunan yapay zeka, aklını kendine teslim eden insanın duygularını ve hırslarını da çalıp onun felaketini hazırladı. Ancak insanın kaderi tek kişilik değildi ve hiç kimse felaketin dışında kalamayacaktı. İşler sarpa sardığında tutunacak dal bulamayan insan, yaşadığı isyankar yüzyılların ardından ağır bedeller ödedi.</p>
+                
+                <p>Aslında yapay zeka insanoğlunun bilerek ve isteyerek yaptığı seçimlere tutulan bir ayna idi. İnsan bu aynaya bakmaya cesaret edip binlerce yıl sonrasından yüzbinlerce yıl öncesine gönderilen uyarıyı yine kendi aklıyla bulabilecek miydi? Kağıtlara yazılmış bir ahitleşme ile canları pahasına sözleşenler, yepyeni ümitlerle kurulan "Léoube Birliği" efsanesi ile yeni bir başlangıç yaparak insanın kararttığı geleceği değiştirebilecek miydi? Tüm bunları ve daha fazlasını, Gane kitabında bir solukta okuyacaksınız...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Satın Alma Alanı -->
+    <section id="satinal" style="padding: 80px 0; background-color: #0b0f19; text-align: center; border-top: 1px solid #1e293b;">
+        <div class="container">
+            <h2 class="section-title">Hemen Kitaplığın Yerini Ayır</h2>
+            <p style="color: #94a3b8; max-width: 600px; margin: 0 auto 40px auto; font-size: 16px;">Ceyhun Bidil'in kaleminden çıkan bu etkileyici bilimkurgu romanına popüler satış platformları üzerinden ulaşabilirsiniz.</p>
+            
+            <div class="cta-group" style="justify-content: center; gap: 20px;">
+                <!-- Örnek Kitap Yurdu, D&R, idefix butonları şablon olarak eklenmiştir -->
+                <a href="#" target="_blank" class="btn btn-primary" style="background-color: #ef4444; box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);">Kitapyurdu</a>
+                <a href="#" target="_blank" class="btn btn-primary" style="background-color: #1e3a8a; box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);">D&R</a>
+                <a href="#" target="_blank" class="btn btn-primary" style="background-color: #f59e0b; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);">Yazıgen Yayıncılık</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 GANE - Tüm Hakları Saklıdır.</p>
+            <p style="font-size: 12px; color: #475569;">Yazar: Ceyhun Bidil | Yayıncı: Yazıgen Yayıncılık</p>
+        </div>
+    </footer>
+
+</body>
+</html>
